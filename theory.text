@@ -1,0 +1,410 @@
+type of machine learning
+** supervised learning **
+is main hum machince ko data tu detay sath correct output b detay hain jis hum label dtaa bolte hain phr machine ak pattern learn kar leta hain or phr new data predic karta hain 
+
+** unsupervised learning **
+yaha phr machine ko sirf data milta hain input bs output ni milta mean correct ans machine ko hum ni batate mean unlable data  machine pattern ki behave pr cluster/group bana deta hain mean yaha ak jasa data milta julte data ko group kar deya jata ahain ya aksar fraud spam detection main kam ati hain 
+
+** reinforcement learning  **
+machine learning karti hain with reward panelties 
+jasay self driving car 
+
+
+** core ML conpect overview **
+
+input (X) x capital hoga q ky ya bhot kuch ho sakta hain 
+  |
+output (y) y small hoga q ky ya ak he hoga 
+  |
+MODEL model wo hota hain jo hamare deya howay data se learn kare or predic kary jasy main 5 gante parta ho mujha 65 mark milte hain or 6 gante parh ky 70 7 gante parh kar 75 tu model ko pata chal jaye ga ak gante barta hain tu 5 mark bar jate hain 
+  |
+Tranining
+mean jo hum data detay hain os main pattern nikalna tranining main ata hain
+ |
+Testing
+ab hum osy new data de kar output check kary gay 
+ |
+Prediction
+
+
+** data preprocessing **
+
+** Raw data **
+ |
+** handle ka missing data ** --> missing information ko fill karna ya drop karna 
+ |
+** Encoded categorical value ** --> data ko number main convert karna machine ko text tu samj ata hain 
+jasay male 1 female 0 ya ++one hot encoding++ red -> [0,0,0,1] blue->[0,0,1,0] green-> [0,0,1,1]
+ |
+** Feature scalling **
+ab agar koi column hain os ki range han (0,10) or dosre column ki hain (0,100) tu ya data model ko degay tu model confuse ho jaye ga is leya hum ak standerd follow kare gay 
+ |
+Slipt data 
+hum data ho split kary gay kuch data se traning karay gay or kiuch testing ky leya rakh degay 
+ |
+data Preprocessing
+
+
+supervised machince learning cycle 
+
+collect labeled data
+ |
+train model 
+ |
+make predictions
+ |
+evaluate performance
+ |
+refine model
+
+
+machince learning algorithm and traning process 
+
+             Regression
+    __________|_____________
+    |                       |
+    linear_Regression       classification
+    |                      ____________|_________________________
+    |                      |           |                         |
+    |        logistic_Regression      K-Nearest_neighbors  Desision_tree_classifier
+    |                    |__________________|____________________|             
+    |___________________________________|
+                 |
+           Model_Tranining
+           ______|______
+           |           |
+          .fit()       .predict()
+    
+
+** linear_Regression ** is main hum number predic karty hain jasy koi student 1 ganta parha hain 60 mark 2 ganta parta hain tu 65 tu is tarha next number predic kary ga or jasy koi 80 gaz ka ploit hain tu 70lakh hain 90 gaz hain tu 75lakh hain tu agar koi ghr 100 gaz tu os ki kya price hogi tu is ko hum linear_Regression bolte hain 
+
+** logistic_Regression ** hum tb krte hain jb hum label predic karna ho jasy koi student pass ya fail hain ya koi email spam hain ya not spam hain mean ya category main prediction kary ga ya tu yes ya no tu ya logistic_Regression hoti hain 
+
+** K-Nearest_neighbors ** yaha hum prediction neighbors data ko dekh kar mean jasy ap ky frind hain os sb ko car pasand hain tu mean ap ko b cars pasand hogi ya prediction hogi is ki 
+
+** Desision_tree_classifier ** condition ki behave pr prediction karna like wo 18 sall hain tu lisence dedo warna na do 
+
+** .fit() ** apne data se model ko train karna 
+** .predict() ** apne train keya howay model se prediction karwana 
+
+
+**  Master model evaluation  **
+
+* classification matric * -> learn classification evaluate model using accuracy , precision , recall, F1-score
+|
+* confusion matrix* -> understand how to confuse the matrix to analyze the model performance
+|
+* Regression matrix * -> learn to evaluate Regression model using MAE, MSE, and RMSE
+|
+* Sklearn matrix * -> master to use the sklearn.matrics for comprehensive model evaluation
+
+
+accuracy = matlab jitna b model ne sahi predict keya os ko divided karo total prediction
+precision = ab is check karte hain kitna sai hain model jasy mane 10 prediction ki lakin os main 7 sai nikil tu precision aye ga 70%
+recall matlab jitna b sai pridiction howay os ko divide kary gay acutal sai data hain os se 
+f1-score = 2 * (precision * recall / precision + recall)
+Precision (Sacchai): "Model ne jitni baar 'Haan' (Positive) kaha, us mein se sach mein kitni baar 'Haan' tha?" (Fokus: False Alarms ko kam karna).
+Recall (Pakad): "Asliyat mein jitne 'Haan' (Positive) cases the, un mein se model kitno ko dhoond paya?" (Fokus: Kisi bimar ko miss na karna).
+F1-Score: Yeh Precision aur Recall ka balance (Average) hota hai. Agar yeh score 1 ke kareeb ho toh model behtareen hai.
+
+* confusion matrix *
+true positive -> matlab model ne guess keya ya covid positive hain or wo actual main positive tha 
+true negative -> matlab model ne guess keya ya covid negativetive hain or wo actual main negative tha 
+false positive -> covid ni tha lakin model ne guess keya covid hain 
+false negative -> covid tha lakin model ne guess keya covid ni
+
+consufion matric hume  table batata hain is tarha ka 
+
+true negative | false positive
+false negative| true positive
+
+accuracy precision recall F1-Score confusion ya sb classification ke leya nikal hain. linear_Regression ke leya ni ya sb hum waha use karte hain jaha lable ho class ho mean ya kisi class se ho prediction like is ko flu hain covid hain Chikungunya Q ky yaha hum true false ya koi class predict karte hain number ni tu ya test yaha hogay bs. linear_Regression ky leya hum mean absolute err(mae) MSE, RMSE, R2-score q ky hum yaha number predict karte hain tu yaha MAE MSE RMSE R2_score ya calculate karte hain
+jis tarha classification waly test hum linear main ni kar sakte is tarha linear waly test b hum classification main ni kar sakte 
+linear_Regression main hogay MAE MSE RMSE R2_score or ya ni accuracy precision recall F1-Score
+or
+classification main hogay accuracy precision recall F1-Score or ya ni MAE MSE RMSE R2_score
+Common Regression Models:
+Linear Regression
+Polynomial Regression
+Ridge Regression
+Lasso Regression
+Elastic Net Regression
+Decision Tree Regressor
+Random Forest Regressor
+Support Vector Regression (SVR)
+KNN Regressor
+
+Common Classification Models:
+classification teen type ki hoti hain 
+binary classification: jis value 2 ho like true false male female asa kuch 
+multiClass classification: jis main 2 se zeyda value ho like green red blue
+multiLable classification: jis main category ky sath bhot sary lable ho like like bhoot bangla movie os ky lable hogay comdey box_office, hindi, bolloywood
+
+Logistic Regression
+K-Nearest Neighbors (KNN Classifier)
+Decision Tree Classifier
+Random Forest Classifier
+Support Vector Machine (SVM Classifier)
+Naive Bayes
+Gradient Boosting Classifier
+AdaBoost Classifier
+Neural Networks (Classification use case)
+
+MAE is main hum real value se subtraction karte hain predict value ko phr sari value ko Absolute Value kar de gay taky positive ho jaye phr sb ka sum hoga phr total se divided hoga tu asa hamara MAE nikle ga 
+MSE is main sum se phlay sb Squar le ley gay 
+RMSE is main hum MSE ka squar root le gay ya phr MSE ki power 0.5 kar e gay 
+
+R2-score = R2= 1−∑(yactual−ymean)power2
+                 ∑(yactual−ypredicted)power2
+	​
+
+                Bias	                Variance
+Meaning	        Simple assumptions	Data ko memorize karna
+Problem	        Underfitting	        Overfitting
+Training Error	High                    Low
+Testing Error	High                    High
+Model	        Too simple	        Too complex
+Bias ka matlab hai model ne data se enough cheezen nahi seekhin. mean kam seedkha
+Variance: Model training data ke examples ko itna closely learn kar leta hai ke naye data par kaam nahi karta. mean rata mar leta hain 
+
+Bias kam kaise karein?
+Better features add karo
+More complex model use karo
+More training data lo
+Polynomial features add karo
+Training zyada karo
+Linear Regression → Random Forest
+
+Variance kam kaise karein?
+More data collect karo
+Regularization use karo
+ .Ridge
+ .Lasso
+Cross-validation use karo
+Feature selection karo
+Model simplify karo
+Dropout (Deep Learning mein)
+Deep Decision Tree → Random Forest
+
+
+Polynomial feature
+linear_Regression se straight line banti hain lakin relation curve hota hain mean house price sirf area pr depend ni karti balky location badroom bhot se chezo pr depend karni hain tu hum Polynomial feature add kar ky curve ko learn kar pate hain Polynomial feature add karte waqt degree bhot important hoti hain like degree 2 x and x-squar degree 3 x , x-squar , x-cube agara high degree kar degay tu model training data ko yaad karna shuru kar sakta hai.Bias kam hoga lekin Variance badh jayega (Overfitting).
+
+math formula y = mx + c 
+m = w , c = b 
+
+normal formula y = wx + b 
+Polynomial feature add karne ky bad y = w1​ * x + w2​ * x-squar + b
+Pehle X slow badh rahe hain
+Baad mein zyada badh rahe hain
+
+Polynomial Regression
+Polynomial Regression matlab hum phaly Polynomial feature karte hain phr linear model lagate hain tu is ko Polynomial Regression bolte hain 
+
+Gradient Descent
+1. Random w,b lo
+        ↓
+2. Prediction karo
+        ↓
+3. Error dekho err calculate ky leya formula MSE= 1/n * ​∑(y−y^​)squar y^ -> mean predic y 
+        ↓
+4. w,b thoda change karo
+        ↓
+5. Repeat
+
+w or b ko kitna change karna hain or kya formula hain 
+new weight = old weight − learning rate × gradient
+old weight jo value aye hogi w ki learning rate change karte rahe gay or check karte rahe gay like 0.1, ya 0.01 ya 0.001 agar err kam ho raha hoga tu agay jaye gay waraa 0.2 kary gay. gradient Kis direction mein improve karna hai matlab w ko negative ya positive main change karo 
+
+agar row or colum zeyada ho tu Gradient Descent use hota hain or agar kam hotu normal equation 
+
+T ka matlab transform like [1,2,3] --> [ 1,
+                                        2,
+                                        3 ]
+
+normal equation w = (XT X)−1power XT * y 
+is se hum direct w nikal leaty hain hume learning rate gradient random value ki zarorat ni lakin ya chote data set ky leya hota hain 
+
+b = y^ ​− wx^ 
+y^ = average
+x^ = average
+
+ab jo be w or b value aye gi wo har column main repeat hogi lakin yad rahe bare data set ky leya Gradient Descent use hota hain or chote ky leya equation 
+** important note ** yad sb chezy backend pr computer khud karta hain humne khud karne ki zarrorat ni hoti 
+
+Feature Engineering
+New features banana ya asa hain jasy hamary data main jo coulm hain os ka target column ke sath koi khas relation ni ban raha tu Feature Engineering karte hain naya feature banate hain khud se like ak colum hain food or ak hain shoping man letay hain is ka spending colum jo target hain os pr koi farq ni parh raha hain tu hum ab new colum banaye gay df["Total_Spend"] = df["Food"] + df["Shopping"] + df["Travel"] tu is ko feature Engineering bolte hain 
+
+Feature selection 
+Filter Method Correlation:
+matlab konsa Feature select karni chahiya like hamre data main purches power ka column hain or salary ka hain or age hain tu hum df.corr() ko print kar de gay tu hume sb ka relation pata chal jaye ka apas main kitna storge relation hain agar kisi specifi ka baki column ky sath nikalna ho tu df.corr()["column name"] tu ya bata de gay is ka baki ky sath kaise relation hain 
+df.corr()["column name"].drop("column name") is matlab hain is column ka relation batao baki coulmn ky sath is apne sath kya relation hain ya mat batao
+selected = corr[abs(corr) > 0.5] is line ka matla hain select main sirf os ko dalo jis ky corr ki value 0.5 se bari ho 
+abs kyun use kiya?
+abs() absolute value deta hai.
+0.90 → 0.90
+-0.90 → 0.90
+Machine Learning mein +0.90 aur -0.90 dono strong relationships hain. Isliye hum magnitude dekhte hain, sign nahi.
+
+positive matlab directely propostinal negative matlab inversely propostinal
+Correlation	Meaning
++0.90 to +1.00	Bahut strong positive
++0.70 to +0.89	Strong positive
++0.40 to +0.69	Moderate
++0.10 to +0.39	Weak
+0	        No linear correlation
+-0.10 to -0.39	Weak negative
+-0.40 to -0.69	Moderate negative
+-0.70 to -1.00	Strong negative
+
+Filter Method Chi-Square Test (Feature Selection Filter Method)
+Chi-Square Test ek statistical test hai jo Machine Learning mein aksar categorical features ko select karne ke liye use hota hai.
+is hum score or p-value nikalte hain 
+agar p-value 0.05 choti ho tu important feature or score depend karta hain dataset pr 
+High Score + Low P-value → sabse best ✅
+Low Score + Low P-value → relation hai, lekin weak ho sakta hai ⚠️
+High Score + High P-value → doubtful ❌
+Low Score + High P-value → remove ❌
+
+from sklearn.feature_selection import chi2
+score, p_value = chi2(X, y)
+
+doubtful matlab High score tu hain lakin ya sir ak chance hain is se os target coum pr koi khas asar ni like ap ne coin uchala or 9 br head aya tu matlab ya coincided hain bs 
+
+ANOVA (Analysis of Variance) — Feature Selection Filter Method
+ANOVA bhi Filter Method ka hissa hai. Iska use hum tab karte hain jab:
+Feature (X) numerical ho
+Target (y) categorical ho
+F= Within Group Variance/Between Group Variance​
+Within Group Variance ky darmiyan farq kitna hain or Between Group Variance group ky andr ki value main kitna farq hain ky wo kareeb hain ya dor 
+p-value tu 0.05 se choti honi chahiya 
+
+F-score zyada + p-value kam → feature important ✅
+F-score + Low P-value → relation hai, lekin weak ho sakta hai ⚠️
+F-score kam + p-value zyada → feature weak ❌
+F-score zyada + p-value zyada → normally select nahi karte ⚠️
+
+Mutual Information (MI) — Feature Selection Filter Method
+Mutual Information bhi Filter Method hai. Iska use ye pata karne ke liye hota hai:
+Feature aur target ke darmiyan kitni information share ho rahi hai?
+Correlation aur Mutual Information ka difference
+Correlation: Sirf linear relationship pakadti hai.
+MI:Linear aur non-linear dono relationship pakad sakti hai.
+ML ka koi fixed score ni hain bs jo bs high hain wo best hain 
+phr ak genrel select ky leya ya number hain 
+MI > 0.5 = strong
+MI > 1 = best
+
+Wrapper Method — Feature Selection
+Wrapper Method bhi Feature Selection ka ek tareeqa hai. Isme hum Machine Learning model ko baar baar train karke check karte hain ke kaun se features model ki performance ko improve kar rahe hain.
+Wrapper Method ke Types
+forword Wrapper:
+Start mein koi feature nahi hota. 
+like this:
+[Income] → Accuracy 75%
+[Income, Credit_Score] → Accuracy 85%
+[Income, Credit_Score, Age] → Accuracy 84%
+Backward Elimination:
+like this:
+[Age, Income, Credit_Score, City, Education]
+remove city 
+
+Recursive Feature Elimination (RFE)
+Ye sabse popular Wrapper Method hai.
+Isme:
+Pehle model train hota hai.
+Feature importance dekhi jati hai.
+Least important feature remove hota hai.
+Dobara train hota hai.
+Jab tak required features na bach jayein.
+
+
+Embedded Method — Feature Selection
+Isme feature selection model ke training ke time hi hoti hai.
+lasso:
+Lasso bolta hai: Jo features important nahi hain, unka coefficient zero kar do.
+
+
+
+ya kal ky leya 
+Lasso Regression (L1 Regularization) 
+Ridge/L2 (zyada tar feature selection nahi karta) 
+Elastic Net 
+Decision Tree Feature Importance 
+Random Forest Feature Importance 
+Gradient Boosting Feature Importance
+Permutation Importance
+SHAP
+Python Example (SelectKBest)
+from sklearn.feature_selection import SelectKBest, chi2
+
+X_new = SelectKBest(score_func=chi2, k=2).fit_transform(X, y)
+
+
+Method	               Feature	        Target	        Kab use kare
+Correlation	       Numerical	Numerical	Linear relation
+Chi-Square	       Category	        Category        Dependency check
+ANOVA	               Numerical	Category	Group mean difference
+Mutual Information     Any	        Any	        Information measure
+Forward	               Any	        Any	        Few features
+Backward	       Any	        Any	        Medium features
+RFE	               Any	        Any	        Feature ranking
+Lasso	               Numerical	Numerical	Remove weak features
+Ridge	               Numerical	Numerical	Control overfitting
+Elastic Net	       Numerical	Numerical	Lasso + Ridge
+DTFI	               Any	        Any	        Tree based importance
+RFFI	               Any	        Any	        Stable tree importance
+GBFI                   Any              Any             Complex/high accuracy
+
+
+** Data Transformation Pipeline **
+Raw Data
+     │
+     ▼
+Missing Values Handle
+     │
+     ▼
+Encoding
+     │
+     ▼
+Scaling / Normalization
+     │
+     ▼
+Feature Engineering
+     │
+     ▼
+Log / Power Transformation (agar zarurat ho)
+     │
+     ▼
+Machine Learning Model
+
+Cross Validation:
+Cross Validation ek technique hai jisme dataset ko multiple parts (folds) mein divide karke model ko baar baar train aur validate kiya jata hai, taake model ki performance ka reliable result mil sake.
+man lo 5 part main divide keya
+Data:
+[A] [B] [C] [D] [E]
+round 1:
+Training: B C D E
+Validation: A
+round 2:
+Training: A C D E
+Validation: B
+round 3:
+Training: A B  D E
+Validation: C
+round 4:
+Training: A B C E
+Validation: D
+round 5:
+Training: A B C D 
+Validation: E
+
+Line Equation : y = mx + c
+Cost Function: batata hai ke model ki prediction kitni galat hai.
+Mean Absolute Error (MAE): MAE=n1​∑∣y−y^​∣
+Mean Squared Error (MSE): MSE=n/1​∑(y−y^​)2
+R2-score :
+R² Score (Coefficient of Determination) ek evaluation metric hai jo batata hai ke Linear Regression model target variable (output) ki variation ko kitna explain kar raha hai.
+R² Score ye batata hai ke hamara regression model data ke andar maujood pattern ko kitni achhi tarah samajh kar prediction kar raha hai.
+jitna 1 ky kareeb utna acha 
+
