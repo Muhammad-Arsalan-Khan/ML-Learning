@@ -79,3 +79,100 @@ plot_tree(
 plt.title("Decision Tree Kaise Faisle Le Raha Hai:")
 plt.show()
 
+
+
+# [ gini/information-gain ya decide karta hain root node kya hoga ]
+
+#                           Root Node (tree)
+#                              /   \
+#                     branch  /     \  branch
+#                            /       \
+#                [ decision node ]     [ decision node ] (sub_tree)
+#                                             /   \
+#                                     branch /     \  branch
+#                                           /       \
+#  (sub_tree)[ sub_decision_node/internal node ]    [ sub_decision_node/internal node ]
+#                              /   \
+#                     branch  /     \ branch
+#                            /       \
+#                      [ leaf ]      [ leaf ]  leaf wahi hoga jaha decision ka outcome aye ga
+
+
+# jb model overfit ho jate hain tu hum kuch sub_tree ko hata detay hain tu is process ko hum pruning bolte hain 
+
+# Root Node:
+# root node wo node hoga jis impurity/gini_impurity zeyda hogi or information gain kam hoga like koi asa sawal hain jis base pr hum direct result ni e sakte tu woh root sawal hoga mean root node jis ki impiurity zeyad hain or information gain kam hain jasy jasy sawal pochy gay mean tree bane gay tu information gain zeyad hoga or impurity kam hogi 
+
+# Entropy:
+# Entropy batati hai ke data mein kitni uncertainty (confusion) hai.
+# Entropy=−∑pi​log2​(pi​)
+# p matlab os tree main se kitne sawal nikal rahe hain 
+# Entropy zeyda hogi sawal utna root node kareeb higa ya rooot node he hoga 
+
+# Gini Impurity:
+# Gini = 1−∑pi2​
+# Gini bhi yahi batata hai ke data kitna mixed hai, lekin formula alag use karta hai.
+
+# Socho ek basket mein balls hain.
+# 10 Red, 0 Blue → Pure → Entropy = 0, Gini = 0
+# 5 Red, 🔵 5 Blue → Sab se zyada mixed → Entropy aur Gini dono high honge.
+
+# 10 0r 0 ya 5 or 5 p ki value hain 10 hain or 10 main se 10 he red mean sb ak he class se hain entropy zero or jb b entropy zero aye tu samaj jao wo leaf node waha information gain zeyda hain or entropy or gini kam hain 
+
+# Information Gain = Parent Entropy − Weighted Child Entropy
+
+# Parent Entropy = Split se pehle data ki confusion.
+# Child Entropy = Split ke baad har group ki confusion.
+# Weighted Child Entropy = Har child group ki entropy ko us group ke size ke hisaab se weight dena.
+
+# Weighted" ka matlab kya hai?
+# Weighted ka matlab hai har child node ko uske records ki tadaad ke mutabiq importance dena.
+# Agar ek child mein 8 records hain aur doosre mein 2, to 8 wala group zyada weight lega.
+
+# Maan lo total 10 students hain.
+
+# Split karne ke baad:
+# Left Child
+# 8 students
+# Entropy = 0.5
+
+# Right Child
+# 2 students
+# Entropy = 1
+
+# Ab Weighted Child Entropy nikalo:
+# 8/10 * 0.5 + 2/10 * 1
+
+# Step by step:
+# Left weight = 8/10 = 0.8
+# Right weight = 2/10 = 0.2
+
+# Ab:
+# 0.8×0.5=0.4
+# 0.2×1=0.2
+
+# Dono ko add karo:
+# 0.4+0.2=0.6
+
+# Weighted Child Entropy = 0.6
+
+# Ab Information Gain
+# Agar Parent Entropy = 0.9 thi, to:
+# Information Gain= 0.9−0.6 = 0.3
+
+# Yani is split ne 0.3 confusion kam kar di.
+# Yaad rakhne ka shortcut
+# Weighted Child Entropy =
+# (Child 1 ka size ÷ Total size × Child 1 ki Entropy) + (Child 2 ka size ÷ Total size × #Child 2 ki Entropy) + ...
+
+
+
+
+
+
+
+
+
+
+
+
