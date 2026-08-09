@@ -1,5 +1,5 @@
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error, mean_squared_error , r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error , r2_score, mean_absolute_percentage_error
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -31,13 +31,23 @@ y_pred = model.predict(X)
 
 
 mae = mean_absolute_error(y, y_pred)
+mape = mean_absolute_percentage_error(y, y_pred) * 100
 mse = mean_squared_error(y, y_pred)
 rmse = mse ** 0.5
 r2 = r2_score(y, y_pred)
+
 print(f'Mean Absolute Error: {mae}')
+print("MAPE:", mape, "%")
 print(f'Mean Squared Error: {mse}')
 print(f'Root Mean Squared Error: {rmse}')
 print(f'R-squared: {r2}')
+# errors = abs(y - y_pred)
+# print(errors.describe())
+n = y.shape[0]      # Total observations (rows). mean row kitni hain data main 
+k = X.shape[1]      # Total feature columns. mean column kitni hain data main 
+adjusted_r2 = 1 - ((1 - r2) * (n - 1) / (n - k - 1))
+print(f'Adjusted R-squared: {adjusted_r2}')
+
 
 # scores = cross_val_score(model, X, y, cv=5, scoring='r2')
 # print(scores)
