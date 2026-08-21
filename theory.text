@@ -158,12 +158,15 @@ R2-score = R2= 1−∑(yactual−ymean)power2
                  ∑(yactual−ypredicted)power2
 	​
 
-                Bias	                Variance
-Meaning	        Simple assumptions	Data ko memorize karna
-Problem	        Underfitting	        Overfitting
-Training Error	High                    Low
-Testing Error	High                    High
-Model	        Too simple	        Too complex
++----------------+--------------------------+--------------------------+
+|                | Bias                     | Variance                 |
++----------------+--------------------------+--------------------------+
+| Meaning        | Simple assumptions       | Data ko memorize karna   |
+| Problem        | Underfitting             | Overfitting              |
+| Training Error | High                     | Low                      |
+| Testing Error  | High                     | High                     |
+| Model          | Too simple               | Too complex              |
++----------------+--------------------------+--------------------------+
 Bias ka matlab hai model ne data se enough cheezen nahi seekhin. mean kam seedkha
 Variance: Model training data ke examples ko itna closely learn kar leta hai ke naye data par kaam nahi karta. mean rata mar leta hain 
 
@@ -341,20 +344,23 @@ from sklearn.feature_selection import SelectKBest, chi2
 X_new = SelectKBest(score_func=chi2, k=2).fit_transform(X, y)
 
 
-Method	               Feature	        Target	        Kab use kare
-Correlation	       Numerical	Numerical	Linear relation
-Chi-Square	       Category	        Category        Dependency check
-ANOVA	               Numerical	Category	Group mean difference
-Mutual Information     Any	        Any	        Information measure
-Forward	               Any	        Any	        Few features
-Backward	       Any	        Any	        Medium features
-RFE	               Any	        Any	        Feature ranking
-Lasso	               Numerical	Numerical	Remove weak features
-Ridge	               Numerical	Numerical	Control overfitting
-Elastic Net	       Numerical	Numerical	Lasso + Ridge
-DTFI	               Any	        Any	        Tree based importance
-RFFI	               Any	        Any	        Stable tree importance
-GBFI                   Any              Any             Complex/high accuracy
++--------------------+------------+----------+-----------------------------+
+| Method             | Feature    | Target   | Kab use kare                |
++--------------------+------------+----------+-----------------------------+
+| Correlation        | Numerical  | Numerical| Linear relation             |
+| Chi-Square         | Category   | Category | Dependency check            |
+| ANOVA              | Numerical  | Category | Group mean difference       |
+| Mutual Information | Any        | Any      | Information measure         |
+| Forward            | Any        | Any      | Few features                |
+| Backward           | Any        | Any      | Medium features             |
+| RFE                | Any        | Any      | Feature ranking             |
+| Lasso              | Numerical  | Numerical| Remove weak features        |
+| Ridge              | Numerical  | Numerical| Control overfitting         |
+| Elastic Net        | Numerical  | Numerical| Lasso + Ridge               |
+| DTFI               | Any        | Any      | Tree based importance       |
+| RFFI               | Any        | Any      | Stable tree importance      |
+| GBFI               | Any        | Any      | Complex/high accuracy       |
++--------------------+------------+----------+-----------------------------+
 
 
 ** Data Transformation Pipeline **

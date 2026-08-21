@@ -91,7 +91,7 @@ plt.show()
 #                                             /   \
 #                                     branch /     \  branch
 #                                           /       \
-#  (sub_tree)[ sub_decision_node/internal node ]    [ sub_decision_node/internal node ]
+#  (sub_tree)[ sub_decision_node/internal node ]    [ sub_decision_node/internalnode ]
 #                              /   \
 #                     branch  /     \ branch
 #                            /       \
