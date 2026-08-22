@@ -250,15 +250,19 @@ abs() absolute value deta hai.
 Machine Learning mein +0.90 aur -0.90 dono strong relationships hain. Isliye hum magnitude dekhte hain, sign nahi.
 
 positive matlab directely propostinal negative matlab inversely propostinal
-Correlation	Meaning
-+0.90 to +1.00	Bahut strong positive
-+0.70 to +0.89	Strong positive
-+0.40 to +0.69	Moderate
-+0.10 to +0.39	Weak
-0	        No linear correlation
--0.10 to -0.39	Weak negative
--0.40 to -0.69	Moderate negative
--0.70 to -1.00	Strong negative
++--------------------+-------------------+-----------------------------+
+| Correlation        | Meaning           | Range                       |
++--------------------+-------------------+-----------------------------+
+| +0.90 to +1.00     | Very Strong       | Very strong positive        |
+| +0.70 to +0.89     | Strong            | Strong positive             |
+| +0.40 to +0.69     | Moderate          | Moderate positive           |
+| +0.10 to +0.39     | Weak              | Weak positive               |
+| 0                  | None              | No linear correlation       |
+| -0.10 to -0.39     | Weak              | Weak negative               |
+| -0.40 to -0.69     | Moderate          | Moderate negative           |
+| -0.70 to -0.89     | Strong            | Strong negative             |
+| -0.90 to -1.00     | Very Strong       | Very strong negative        |
++--------------------+-------------------+-----------------------------+
 
 Filter Method Chi-Square Test (Feature Selection Filter Method)
 Chi-Square Test ek statistical test hai jo Machine Learning mein aksar categorical features ko select karne ke liye use hota hai.
@@ -326,22 +330,32 @@ Embedded Method — Feature Selection
 Isme feature selection model ke training ke time hi hoti hai.
 lasso:
 Lasso bolta hai: Jo features important nahi hain, unka coefficient zero kar do.
+mean lasso feature kam kar ky overfitting kam karta hain 
+LASSO Regression = Linear Regression + L1 Regularization
+LASSO model train karta hai aur jo features prediction mein kam useful hote hain, unke coefficient ko 0 kar deta hai. ab agar kis column ka coefficient zero hoga tu os pridiction waly coulm pr koi asar ni hoga or lasso feature selection + model train + overfitting ko kam karne main kam ata hain 
+lasso ​penalty lagata hain :
+ya penalty ka formula hota hain penalty =  λ * ∑∣β​∣ 
+λ:  ya lamda ya khud rakh check karte jitna bara utna coefficient chote hogay 
+β​ : ya coefficient hain β​1 + β​2 + β​3 in ka sum hoga phr lamda multiple phr MAE main plus
+err = MSE 
+cost ka formula = error + penalty
 
 
+Ridge:
+Ridge Regression = Linear Regression + L2 Regularization
+Ridge Prediction error kam karo aur coefficients ko bahut bada hone se roko. lakin zero ni karta 
+Ridge main same yahi use hota hain bs coefficient squar hota hain or coefficientzero ni hota 
+Ridge cost formula = MSE + (λ * ∑β²​)  
+Ridge ka main purpose:
+Overfitting ko reduce karna
+λ -> jitan bara kary gay more shrikness hogi like zeyda feature kam hogay 
 
-ya kal ky leya 
-Lasso Regression (L1 Regularization) 
-Ridge/L2 (zyada tar feature selection nahi karta) 
-Elastic Net 
-Decision Tree Feature Importance 
-Random Forest Feature Importance 
-Gradient Boosting Feature Importance
-Permutation Importance
-SHAP
-Python Example (SelectKBest)
-from sklearn.feature_selection import SelectKBest, chi2
 
-X_new = SelectKBest(score_func=chi2, k=2).fit_transform(X, y)
+Elastic Net :
+Elastic Net = Lasso + Ridge
+formula = MSE + (λ1 * ∑β​) +(λ2 * ∑β²​)  
+alpha 1 hoga lasso kareeb hogi alpha 0 hoga tu Ridge ky kareeb 0.5 hoga 50 50 hoga
+Lasso ki feature selection bhi chahiye aur Ridge ki stability bh
 
 
 +--------------------+------------+----------+-----------------------------+
