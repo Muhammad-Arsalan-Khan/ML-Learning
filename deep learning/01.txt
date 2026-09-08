@@ -1,0 +1,213 @@
+difference b/w Machine Learning & Deep Learning
+
+Machine Learning:
+Uses a variety of algorithms to find patterns in data and make decisions.
+Typically requires manual extraction and selection of features.
+Handles tasks like regression, classification, clustering, and anomaly detection.
+
+Deep Learning:
+Automates the process of feature extraction and learns representations from raw data.
+Automates feature extraction, learning from raw data directly.
+Particularly strong in image andspeech recognition, and natural language processing.
+
+Dataset mein total values ≈ number of rows × number of columns. Is total ke basis par hum dataset ki scale ka rough idea le sakte hain, lekin small/big causaly jb small os bolo jata hain jis main hazaro ya lakho data_point (row * col) or jb million ya os se b zeyda ho tu bara dataset
+
+Neural network:
+functinal unit of deep learning
+A neural network is a series of algorithms that endeavors to
+recognize underlying relationships in a set of data through a
+process that mimics the way the human brain operates.
+
+Components:
+1. Neurons:
+jo information le kar jate hain like agra koi ap ko muka mary tu dard hoga ya information brain tk le jane waly ko neuron bolte hain 
+Basic units of neural networks, analogous to human brain neurons, which process and
+transmit information.
+
+2.Layers:
+ak neuron hoga tu neuron on neuron ki bhot sari leyar bana do tu neural leyar.
+input layer jo hum dete hain output layer jo ans hain hidden layer jo input ky bad ati hain mean jo neuron wali leyar
+Composed of multiple layers of neurons: an input layer to receive signals, one or more hidden layers to process the signals, and an output layer to deliver the result.
+
+3. Weights and Biases:
+algorithm check kary ga kis feature pr kitna importance deni hain or kis pr kitna Biases add karni hain or hr layer pr hr feature pr ak weights or ak Biases add hoti hain.
+Connections between neurons have weights that adjust as learning proceeds, and
+neurons may have a bias term, both of which determine the strength and direction of theinfluence one neuron has on another.
+
+4.Activation Functions:
+ya wo functin hote hain output asan bante hain samne ky leya agra agar hum classification kar kary rahe hain tu ak Activation function use kary gay sigmod wo ans ko 0 to 1 ki range main convert kar dega asa or  bhot Activation functin hote hain 
+Functions that decide whether a neuron should be activated, influencing the network's
+ability to learn complex patterns.
+
+
+Type of Neural Network:
+
+ANN / MLP:
+ANN = Artificial Neural Network
+input ➡ neurons ➡ neurons ➡ output
+Kab use karna chahiye?
+Jab tumhare paas normal numerical/tabular data ho.
+Examples:Loan prediction, Customer churn, House price prediction, Student result prediction
+
+CNN — Convolutional Neural Network:
+lines → edges → shapes → objects
+Image ke important features/patterns automatically find karta hai.
+Kab use karna chahiye?
+Jab data images/video/visual information ho 
+example: Face recognition, Cat vs dog, X-ray analysis, Object detection Handwritten digit recognition
+
+
+RNN — Recurrent Neural Network:
+RNN ko aisa student samjho jo pichli baat yaad rakhta hai.
+
+Word 1 → Word 2 → Word 3 → Word 4
+          ↑
+     previous memory
+
+Kab use karna chahiye?
+Jab order important ho. example : Sentence, Speech, Sensor readings, Time-series
+⚠️ Lekin modern applications mein traditional RNN ki jagah aksar LSTM/GRU/Transformers better choices hote hain.
+
+
+LSTM — Long Short-Term Memory:
+LSTM ko RNN ka zyada smart version samjho.
+Example:
+"Ali ne ek red car khareedi. Kuch der baad woh us car ko ghar le gaya."
+LSTM seekhne ki koshish karta hai ke "woh" kis cheez ko refer kar raha hai.
+Kab use karna chahiye?, Time-series, Sequential data, Speech,Older NLP systems,Sensor data
+
+
+GRU — Gated Recurrent Unit:
+GRU ko LSTM ka chhota bhai samjho
+Ye kya karta hai?
+Sequence mein important information ko retain/drop karne mein help karta hai.
+Kab use karna chahiye?
+Jab tum: sequence data use kar rahe ho. LSTM jaisa approach chahte ho. simpler/faster recurrent model try karna chahte ho
+
+Transformer:
+Transformer ko aisa student samjho jo poori sentence ko ek saath dekh kar important relationships samajhta hai.
+Example:
+"The dog didn't chase the cat because it was tired."
+Transformer attention ke through context se determine karne ki koshish karta hai ke "it" kis se related hai.
+Ye kya karta hai?
+Long-range relationships aur context ko effectively process karta hai.
+Kab use karna chahiye? NLP, Chatbots, Translation, LLMs, Code generation,Multimodal AI, Vision Transformers ke through images
+
+
+RBF Network — Radial Basis Function Network:
+Isko similarity checker samjho.
+Suppose tumhare paas fruits hain: ak jaso ak group bana dega
+Ye new input mere learned centers/patterns mein se kis ke qareeb hai?
+Ye kya karta hai?
+Input aur learned centers ke darmiyan similarity/distance ko use karke prediction karta hai.
+Kab use karna chahiye? Function approximation, Classification, Regression, Small/medium datasets, Jab local similarity important ho
+
+
+SOM — Self-Organizing Map:
+Ye kya karta hai?
+Similar data points ko map par nearby organize karta hai.
+Ye generally unsupervised learning approach hai.
+Kab use karna chahiye? Clustering, Visualization, High-dimensional data ko samajhna,Customer segmentation, Exploratory data analysis
+
+
+DBN — Deep Belief Network:
+Har floor data ki kuch representation seekhta hai.
+Input — Hidden Layer 1 — Hidden Layer 2 — Hidden Layer 3 — Output
+Ye kya karta hai?
+Data ki hierarchical representations learn karta hai.
+Kab use karna chahiye?
+Historically: Feature learning, Dimensionality reduction, Classification, Generative modeling
+⚠️ Aaj kal DBNs relatively uncommon hain. Modern deep learning mein Transformers, CNNs, autoencoders etc. zyada common hain.
+
+Modular Neural Network:
+             Input
+               ↓
+      ┌────────┼────────┐
+      ↓        ↓        ↓
+   Module A Module B Module C
+      ↓        ↓        ↓
+      └────────┼────────┘
+               ↓
+             Output
+
+Har module apna specific kaam kar sakta hai.
+
+Ye kya karta hai?
+Large problem ko choti specialized neural networks/modules mein divide karta hai.
+Kab use karna chahiye?
+Jab problem naturally different sub-problems mein divide ho sakti ho.
+
+
+
+NTM — Neural Turing Machine:
+Normal neural network ke paas limited internal memory hoti hai, lekin NTM conceptually ek external memory ke saath kaam karta hai.
+
+Ye kya karta hai?
+Neural network ko external memory ke saath computational tasks seekhne ka mechanism provide karta hai.
+Kab use karna chahiye?
+Research/experimental situations mein:
+Algorithm learning
+Memory-intensive tasks
+Sequential reasoning experiments
+
+⚠️ NTM production AI mein common choice nahi hai.
+
+
+Capsule Neural Network:
+Sirf ye detect karna enough nahi ke:
+👁️ + 👁️ + 👃 + 👄
+"Eyes hain."
+Network ko ye bhi samajhna hota hai:
+"Eyes, nose aur mouth kis relationship/orientation mein hain?"
+Capsules features ke saath unki instantiation/pose-related information represent karne ka idea dete hain.
+
+Ye kya karta hai?
+Objects ke parts ke relationships ko better represent karne ki koshish karta hai.
+Kab use karna chahiye?
+Research mein:Object recognition, Pose/viewpoint-related recognition, Part-whole relationships
+
+⚠️ Practical mainstream computer vision mein CNNs aur Vision Transformers zyada common hain.
+
+
+Autoencoder:
+ya data ko leta hai os encide karta hain mean compressed phr os decode kart hain
+Ye kya karta hai?
+Input ko compress/represent karta hai aur phir reconstruct karne ki koshish karta hai.
+Kab use karna chahiye?Anomaly detection, Noise removal, Dimensionality reduction, Representation learning
+
+
+GAN — Generative Adversarial Network:
+GAN mein do students hain:
+Student 1: Generator
+Fake image banata hai.
+Student 2: Discriminator
+Check karta hai:
+"Real hai ya fake?"
+Dono training mein compete karte hain.
+
+Ye kya karta hai?
+New synthetic data generate karne ki koshish karta hai.
+Kab use karna chahiye? Image generation, Synthetic data, Image transformation
+
+⚠️ Modern image generation mein diffusion models ne GANs ko kai applications mein largely supersede kar diya hai.
+
+
+GNN — Graph Neural Network:
+
+Ali ─── Ahmed
+│        │
+│        │
+Sara ─── Usman
+
+Ye kya karta hai?
+Nodes aur unke relationships/connections se information learn karta hai.
+Kab use karna chahiye? Social networks, Recommendation, Fraud detection, Molecules, Knowledge graphs, Network analysis
+
+
+DQN — Deep Q-Network:
+Isko game khelne wala bachcha samjho.
+Dheere-dheere woh seekhta hai: "Kis situation mein konsa action karna hai?"
+Ye kya karta hai?Actions ki expected reward/value estimate karne mein help karta hai.
+Kab use karna chahiye? Games,Simulations, Sequential decision-making
+
+
